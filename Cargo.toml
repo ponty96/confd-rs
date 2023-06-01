@@ -5,4 +5,19 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[profile.dev.package.backtrace]
+opt-level = 3
+
 [dependencies]
+clap = {version = "4.0.15", features = ["derive"]}
+color-eyre = "0.6.2"
+eyre = "0.6.8"
+
+# async
+tokio = { version = "1.20.1", features = ["full"] }
+
+# tracing crates
+tracing = "0.1.36"
+tracing-error = "0.2.0"
+tracing-subscriber = { version = "0.3.15", features = ["env-filter"] }
+tracing-tree = "0.2.1"
